@@ -42,3 +42,8 @@ steps:
     feedPublish: '$(System.TeamProject)/Tailspin.SpaceGame.Web.Models'
     allowPackageConflicts: true
   condition: succeeded()
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'Tailspin.SpaceGame.Web.Models'
